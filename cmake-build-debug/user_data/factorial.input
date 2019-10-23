@@ -1,0 +1,26 @@
+PUSH 6
+POP AX
+PUSH AX
+POP BX
+CALL fact
+
+end:
+POP AX
+POP AX
+END
+
+fact:
+PUSH AX
+PUSH BX
+PUSH 1
+JNE next
+RET
+
+next:
+SUB
+POP BX
+PUSH BX
+MUL
+POP AX
+CALL fact
+RET

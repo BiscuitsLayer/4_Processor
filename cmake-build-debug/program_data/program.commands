@@ -1,0 +1,12 @@
+const size_t PUSH_LEN = 4;
+const size_t POP_LEN = 3;
+const size_t ACCURACY = 3;
+
+#define STR_CMP(func) (strcmp(command, #func) == 0)
+#define DEF_CMD(name, num, code) CMD_##name = num,
+
+enum Commands {
+    #include "program.operations"
+};
+
+#undef DEF_CMD
